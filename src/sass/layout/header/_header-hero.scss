@@ -1,0 +1,336 @@
+@use '../../abstracts';
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // gap: 4.8rem;
+    position: relative;
+
+    &__heading {
+        padding: 3.2rem 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.4rem;
+        // height: 65vh;
+
+        a {
+
+    
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        h1 {
+            font-size: abstracts.$heading-l;
+            line-height: abstracts.$line-height-heading;
+            text-align: center;
+            color: abstracts.$darkest-blue;
+            // align-self: stretch;
+            letter-spacing: -2.4px;
+        }
+
+        p {
+            color: abstracts.$dark-blue;
+            text-align: center;
+            line-height: 150%;
+        }
+    }
+
+    &__box {
+        padding: 2.4rem;
+        width: 87%;
+        border-radius: 16px;
+        box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+        background-color: abstracts.$white;
+        color: abstracts.$darkest-blue;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        // display: grid;
+        gap: 2.4rem;
+
+        h3 {
+            font-size: abstracts.$heading-m;
+            line-height: abstracts.$line-height-heading;
+            letter-spacing: -1.2px;
+            font-weight: 600;
+            text-align: left;
+        }
+    }
+
+    &__box-btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__box-btn {
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+
+        p {
+            font-weight: 600;
+            font-size: abstracts.$body-m;
+            line-height: abstracts.$line-height-body;
+            color: abstracts.$darkest-blue;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid abstracts.$borders;
+            border-radius: 50%;
+            width: 31px;
+            height: 31px;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                border: 1px solid abstracts.$blue;
+            }
+        }
+
+        .checked {
+            background: abstracts.$input-ratio;
+            border: none;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 50%;
+                width: 50%;
+                border-radius: 50%;
+                background: abstracts.$blue;
+            }
+        }
+    }
+
+    &__result {
+        .welcome-text {
+            text-align: left;
+            h5 {
+                font-size: abstracts.$heading-m;
+                line-height: abstracts.$line-height-heading;
+                margin-bottom: 2.4rem;
+            }
+            p {
+                font-size: abstracts.$body-s;
+                line-height: abstracts.$line-height-body;
+            }
+        }
+        padding: 3.2rem;
+        border-radius: 16px;
+        background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+        color: abstracts.$white;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2.4rem;
+
+        .bmi-score {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 0.8rem;
+            font-size: abstracts.$body-m;
+            line-height: abstracts.$line-height-body;
+            font-weight: 600;
+
+            h4 {
+                font-size: 4.8rem;
+                text-align-last: left;
+            }
+        }
+
+        .bmi-info {
+            text-align: left;
+            font-weight: 400;
+            font-size: abstracts.$body-s;
+            line-height: abstracts.$line-height-body;
+
+            p,
+            span {
+                font-size: abstracts.$body-s;
+                line-height: abstracts.$line-height-body;
+            }
+
+            .bmi-ratio {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+		.hero {
+			gap: 4rem;
+
+			&__heading {
+				justify-content: center;
+                padding: 3.2rem 2.4rem 0 2.3rem;
+
+				h1 {
+					max-width: 50%;
+					margin: 0 auto;
+				}
+			}
+
+			&__box {
+				text-align: left;
+				gap: 3.2rem;
+                padding: 3.2rem;
+			}
+
+			&__box-btns {
+				gap: 1.5rem;
+			}
+
+			&__box-btn {
+				flex-basis: 50%;
+				gap: 1.8rem;
+			}
+
+            &__result {
+				border-radius: 16px 999px 999px 16px;
+				// flex-direction: column;
+                flex-direction: row;
+				align-items: center;
+				gap: 2.4rem;
+
+  
+				.welcome-text {
+					display: flex;
+                    flex-direction: column;
+					justify-content: center;
+					align-items: start;
+					gap: 2.4rem;
+					h5 {
+                        font-size: 2.4rem;
+						margin-bottom: 0;
+					}
+				}
+
+                .bmi-score {
+                    flex: 1;
+                }
+
+                .bmi-info{
+                    flex: 1;
+                }
+			}
+		}
+
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        padding: 8rem 7rem;
+        .hero {
+			flex-direction: row;
+            // padding: 12rem 7rem;
+            gap: 4.4rem;
+
+			&__heading {
+                width: 100%;
+				align-items: start;
+				gap: 3.5rem;
+                position: relative;
+                padding: 0;
+				
+
+
+                a {
+                    position: absolute;
+                    content: '';
+                    top: -12rem;
+
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+
+				h1 {
+                    text-align: left;
+                    max-width: 100%;
+				}
+
+				p {
+					text-align: left;
+				}
+			}
+
+			&__box {
+				padding: 3.2rem;
+				width: 100%;
+				gap: 3.2rem;
+			}
+
+			&__box-btn {
+				gap: 1.8rem;
+			}
+
+            &__result {
+
+				.welcome-text {
+
+					align-items: start;
+					gap: 1.6rem;
+				}
+			}
+		}
+    }
+}
+@media screen and (min-width: 1440px) {
+    .header {
+        padding: 10rem 7rem;
+        .hero {
+            // padding: 19rem 7rem;
+            gap: 5rem;
+
+			&__heading {
+                width: 100%;
+				align-items: start;
+				gap: 3.5rem;
+                position: relative;
+				
+                a {
+
+                    img {
+                        width: 6.2rem;
+                        height: 6.2rem;
+                    }
+                }
+
+				h1 {
+                    font-size: abstracts.$heading-xl;
+				}
+
+				p {
+					text-align: left;
+				}
+			}
+
+			&__box {
+				padding: 3.2rem;
+				width: 100%;
+				gap: 3.2rem;
+			}
+
+			&__box-btn {
+				gap: 1.8rem;
+			}
+		}
+    }
+}

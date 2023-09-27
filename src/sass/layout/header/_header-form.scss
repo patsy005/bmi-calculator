@@ -1,0 +1,113 @@
+@use '../../abstracts';
+
+.header {
+	.form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.6rem;
+
+		&__box {
+            width: 100%;
+            display: flex;
+            gap: 1.6rem;
+            flex-direction: column;
+            align-items: start;
+           
+
+			label {
+				font-size: abstracts.$body-s;
+                line-height: abstracts.$line-height-body;
+				color: abstracts.$dark-blue;
+			}
+
+			&-group {
+				width: 100%;
+				display: flex;
+                flex-direction: column;
+				gap: 0.8rem;
+				align-items: start;
+			}
+
+			&-input {
+				width: 100%;
+				border-radius: 12px;
+				border: 1px solid #d8e2e7;
+				font-size: abstracts.$body-m;
+                line-height: abstracts.$line-height-body;
+				color: abstracts.$darkest-blue;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				transition: border 0.3s;
+                cursor: pointer;
+
+				&:focus-within,
+				&:hover {
+					border: 1px solid abstracts.$blue;
+				}
+
+				input {
+                    padding: 2rem 0 2rem 2.4rem;
+					flex: 1;
+					border: none;
+					font-size: 2.4rem;
+					color: abstracts.$darkest-blue;
+                    font-size: abstracts.$heading-m;
+                    line-height: abstracts.$line-height-heading;
+					font-weight: 600;
+                    cursor: pointer;
+                    border-radius: 12px;
+                    width: 80%;
+
+                    &::placeholder{
+                        opacity: 0.25;
+                    }
+
+					&:focus {
+						border: none;
+						outline: none;
+					}
+				}
+				span {
+                    padding-right: 2.4rem;
+					text-align: right;
+					font-size: abstracts.$heading-m;
+                    line-height: abstracts.$line-height-heading;
+					color: abstracts.$blue;
+					font-weight: 600;
+				}
+			}
+
+            &-inputs-imperial {
+                display: flex;
+                gap: 2.4rem;
+
+                input {
+                    width: 80%;
+                    flex: 2;
+                }
+            }
+		}
+
+
+	}
+}
+
+@media screen and (min-width: 768px) {
+    .header{
+
+        .form{
+
+            &__box--metric {
+                flex-direction: row;
+            }
+
+            &__box {
+                gap: 2.4rem;
+            }
+        }
+    }
+}
+

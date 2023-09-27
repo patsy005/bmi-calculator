@@ -1,0 +1,200 @@
+@use '../abstracts';
+
+.limits {
+	padding: 7.2rem 0;
+
+	&__line {
+		display: none;
+
+		// img {
+		//     display: none;
+		// }
+	}
+
+	&__container {
+		padding: 0 2.4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 5.6rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__box-text {
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		gap: 3.2rem;
+
+		h2 {
+			text-align: center;
+			font-size: 3.2rem;
+			line-height: 110%;
+			letter-spacing: -1.6px;
+			color: abstracts.$darkest-blue;
+		}
+
+		p {
+			text-align: center;
+		}
+	}
+
+	&__box {
+		padding: 2.4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		border-radius: 16px;
+		background: abstracts.$white;
+		box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+
+		.title {
+			display: flex;
+			align-items: center;
+			gap: 1.6rem;
+
+			img {
+				width: 3.2rem;
+				height: 3.2rem;
+			}
+
+			p {
+				font-size: abstracts.$heading-s;
+				line-height: abstracts.$line-height-heading;
+				font-weight: 600;
+				letter-spacing: -1px;
+				color: abstracts.$darkest-blue;
+			}
+		}
+	}
+
+	&__box-text,
+	&__box {
+		max-width: 87%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.limits {
+		padding: 9.6rem 4.3rem;
+
+		&__container {
+			padding: 0;
+			display: grid;
+			// gap: 5.6rem;
+			row-gap: 2.4rem;
+			column-gap: 1.6rem;
+			justify-items: center;
+			align-content: center;
+
+			grid-template-areas:
+				'box box'
+				'gender age'
+				'muscle pregnancy'
+				'race race';
+		}
+
+		&__gender {
+			grid-area: gender;
+		}
+		&__age {
+			grid-area: age;
+		}
+		&__muscle {
+			grid-area: muscle;
+		}
+
+		&__pregnancy {
+			grid-area: pregnancy;
+		}
+
+		&__race {
+			grid-area: race;
+			width: 50%;
+		}
+
+		&__box-text {
+			grid-area: box;
+		}
+
+		&__box {
+			padding: 3.2rem;
+			gap: 1.6rem;
+			height: 25rem;
+		}
+
+		&__box-text,
+		&__box {
+			max-width: 100%;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.limits {
+		padding: 9rem 7rem;
+
+		&__container {
+			row-gap: 3.2rem;
+			column-gap: 2.4rem;
+			grid-template-columns: repeat(8, 1fr);
+			grid-area: unset;
+		}
+
+		&__line {
+			display: block;
+			grid-area: unset;
+			grid-column: 2;
+		}
+
+		&__gender {
+			grid-area: unset;
+            grid-column: span 3;
+		}
+		&__age {
+			grid-area: unset;
+			grid-column: 3 / span 3;
+		}
+		&__muscle {
+			grid-area: unset;
+            grid-column: span 3;
+		}
+
+		&__pregnancy {
+			grid-area: unset;
+			grid-column: 2 /span 3;
+		}
+
+		&__race {
+			grid-area: unset;
+			// width: 50%;
+			grid-column: 5/span 3;
+			width: 100%;
+		}
+
+		&__box-text {
+			grid-area: unset;
+			grid-column: span 4;
+			align-items: start;
+			gap: 3.2rem;
+
+			h2 {
+				text-align: left;
+				font-size: abstracts.$heading-l;
+				line-height: abstracts.$line-height-heading;
+			}
+
+			p {
+				text-align: left;
+			}
+		}
+
+		&__box {
+			padding: 3.2rem;
+			height: auto;
+			width: 36rem;
+			max-width: 36rem;
+		}
+
+	}
+}

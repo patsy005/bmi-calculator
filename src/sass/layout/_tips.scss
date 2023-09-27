@@ -1,0 +1,108 @@
+@use '../abstracts';
+
+.tips {
+    padding-top: 12rem;
+
+    &__boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        padding: 0 2.4rem;
+    }
+    
+    &__box {
+        max-width: 87%;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+
+        img{
+            width: 6.4rem;
+            height: 6.4rem;
+        }
+    }
+
+    &__box-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        h6{
+            font-size: abstracts.$heading-m;
+            line-height: abstracts.$line-height-heading;
+            letter-spacing: -1.2px;
+            font-weight: 600;
+            color: abstracts.$darkest-blue;
+        }
+
+        p {
+            color: abstracts.$dark-blue;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .tips {
+        padding: 9.6rem 4.3rem;
+    
+        &__boxes {
+            padding: 0;
+        }
+        
+        &__box {
+            max-width: 100%;
+            flex-direction: row;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+    
+            img{
+                width: 6.4rem;
+                height: 6.4rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .tips {
+        padding: 9rem 7rem;
+    
+        &__boxes {
+            flex-direction: row;
+            gap: 3.2rem;
+        }
+        
+        &__box {
+            flex-direction: column;
+            gap: 4.5rem;
+            justify-content: center;
+            align-items: start;
+    
+            img{
+                width: 6.4rem;
+                height: 6.4rem;
+            }
+        }
+    
+        &__box-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+    
+            h6{
+                font-size: abstracts.$heading-m;
+                line-height: abstracts.$line-height-heading;
+                letter-spacing: -1.2px;
+                font-weight: 600;
+                color: abstracts.$darkest-blue;
+            }
+    
+            p {
+                color: abstracts.$dark-blue;
+            }
+        }
+    }
+}

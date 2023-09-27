@@ -1,0 +1,42 @@
+@use '../abstracts';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.display-none{
+    display: none;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background: abstracts.$white;
+}
+
+.err-box {
+    border: 1px solid abstracts.$error;
+}
+
+.error-msg {
+    color: abstracts.$error;
+    text-align: left;
+}
