@@ -15,5 +15,4 @@
 .DS_Store
 .prettierignore
 
-node-modules
-preview.jpg
+node_modules
